@@ -1,2 +1,3 @@
-<%= link_to "All Category", categories_path %><br>
-<%= link_to "All Product", products_path %><br>
+<% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category) %>
+<% end %>
