@@ -9,7 +9,7 @@
 
   <% @products.each do |product| %>
     <tr>
-      <td> <%= product.name %> </td>
+      <td> <%= link_to product.name, user_product_path(product) %> </td>
       <td> <%= product.description %> </td>
       <td> <%= product.price %> </td>
       <td> <%= link_to "Add to Cart" %></td>

@@ -8,6 +8,10 @@ class HomeController < ApplicationController
     @products = Category.find(params[:id]).products
   end
 
+  def product
+    @product = Product.find(params[:id])
+  end
+
   def search
     product_table = Product.arel_table
     @products = Product.where(product_table[:name].matches(search_argument))

@@ -1,0 +1,21 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<p>
+  <strong>Title</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description</strong>
+  <%= @product.description %>
+</p>
+
+
+<p>
+  <strong>Price</strong>
+  $<%= @product.price %>
+</p>
+
+<%= link_to "Add to Cart" %>
+<%= link_to "Reviews", product_reviews_path(@product) %>
