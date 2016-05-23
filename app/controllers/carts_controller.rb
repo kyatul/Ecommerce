@@ -20,6 +20,14 @@ class CartsController < ApplicationController
     save_item
   end
 
+  def destroy
+    user_id = 1
+    @cart = Cart.where("user_id = ? AND product_id = ?", user_id, params[:id])
+    @cart.delete_all
+
+    redirect_to(:back)
+  end
+
   private
 
     def cart_params

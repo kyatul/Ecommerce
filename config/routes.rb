@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'home/product/cart/:id' => 'carts#add', as: :add_user_cart
   get 'cart' => 'carts#index', as: :carts
+  delete 'cart/:id' => 'carts#destroy', as: :cart
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
