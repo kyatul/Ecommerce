@@ -17,5 +17,5 @@
   $<%= @product.price %>
 </p>
 
-<%= link_to "Add to Cart" %>
+<%= link_to "Add to Cart", add_user_cart_path(@product)%>
 <%= link_to "Reviews", product_reviews_path(@product) %>

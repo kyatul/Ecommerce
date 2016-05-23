@@ -3,7 +3,7 @@
     <%= f.text_field :query %>
     <%= f.submit "Search"%>
   </p>
-<% end %>
+<% end %><%= link_to "Cart (#{@cart_count})", carts_path %><br><br>
 
 
 <% @categories.each do |category| %>

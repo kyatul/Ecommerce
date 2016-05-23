@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @categories = Category.all
+    @cart_count = Cart.where("user_id = ?", 1).count
   end
 
   def category_products
