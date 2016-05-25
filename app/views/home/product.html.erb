@@ -1,21 +1,26 @@
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
-<p>
-  <strong>Title</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description</strong>
-  <%= @product.description %>
-</p>
-
-
-<p>
-  <strong>Price</strong>
-  $<%= @product.price %>
-</p>
-
-<%= link_to "Add to Cart", add_user_cart_path(@product)%>
-<%= link_to "Reviews", product_reviews_path(@product) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-offset-3 ">
+      <table class="table">
+        <tr>
+          <td><strong>Name</strong></td>
+          <td><%= @product.name %></td>
+        </tr>
+        <tr>
+          <td><strong>Description</strong></td>
+          <td><%= @product.description %></td>
+        </tr>
+        <tr>
+          <td><strong>Price</strong></td>
+          <td><%= @product.price %></td>
+        </tr>
+        <tr>
+          <td><%= link_to "Add to Cart", add_user_cart_path(@product), class: "btn btn-primary"%></td>
+          <td><%= link_to "Reviews", product_reviews_path(@product), class: "btn btn-primary" %></td>
+        </tr>
+    </div>
+  </div>
+</div>
