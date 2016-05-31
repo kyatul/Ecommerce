@@ -6,6 +6,15 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ProductsPdf.new(@products)
+        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf',
+                  disposition: "inline"
+      end
+    end
   end
 
   def show
